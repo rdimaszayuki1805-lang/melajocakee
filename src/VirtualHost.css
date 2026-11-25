@@ -1,0 +1,374 @@
+/* ===================================
+   MELAJO CAKE — VIRTUAL HOST
+=================================== */
+
+.virtual-host {
+  position: fixed;
+  left: 24px;
+  bottom: 16px;
+  z-index: 110;
+
+  --host-green: #082b1c;
+  --host-emerald: #123e2b;
+  --host-gold: #d4af61;
+  --host-champagne: #f5dda0;
+  --host-cream: #faf6ed;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* FLOATING CHARACTER */
+
+.host-trigger {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 110px;
+  height: 145px;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.host-character {
+  width: 110px;
+
+  filter: drop-shadow(0 8px 10px #082b1c35);
+
+  animation: hostFloating 4s ease-in-out infinite;
+}
+
+.host-character svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes hostFloating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* SPEECH BUBBLE */
+
+.host-bubble {
+  position: absolute;
+
+  left: 80px;
+  top: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 11px 15px;
+
+  background: var(--host-green);
+  color: var(--host-champagne);
+
+  border: 1px solid var(--host-gold);
+  border-radius: 15px 15px 15px 3px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  box-shadow: 0 8px 20px #082b1c20;
+}
+
+/* PANEL */
+
+.host-panel {
+  position: absolute;
+
+  left: 0;
+  bottom: 155px;
+
+  width: 350px;
+  max-width: calc(100vw - 40px);
+
+  border-radius: 24px;
+  border: 1px solid var(--host-gold);
+
+  background: var(--host-cream);
+
+  overflow: hidden;
+
+  box-shadow: 0 22px 65px #082b1c35;
+
+  transform-origin: bottom left;
+}
+
+/* HEADER */
+
+.host-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 17px;
+
+  background: linear-gradient(
+    135deg,
+    #123e2b,
+    #082b1c
+  );
+
+  border-bottom: 1px solid #d4af6155;
+}
+
+.host-avatar {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+  border-radius: 50%;
+
+  background: #d4af6130;
+  border: 1px solid var(--host-gold);
+}
+
+.host-avatar svg {
+  width: 100%;
+  transform: scale(1.3) translateY(5px);
+}
+
+.host-identity {
+  flex: 1;
+}
+
+.host-identity h3 {
+  color: var(--host-champagne);
+
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+
+  margin: 0 0 5px;
+}
+
+.host-identity span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #c4d7c7;
+  font-size: 10px;
+}
+
+.host-identity i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #80c99b;
+}
+
+.host-close {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  background: transparent;
+  border: none;
+
+  color: var(--host-champagne);
+}
+
+/* MESSAGE AREA */
+
+.host-body {
+  max-height: min(390px, 45vh);
+
+  overflow-y: auto;
+
+  padding: 18px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #d4af61 transparent;
+}
+
+.host-message {
+  padding: 15px;
+
+  background: #fffdf8;
+
+  border: 1px solid #d4af6135;
+  border-radius: 4px 16px 16px 16px;
+}
+
+.host-message p {
+  color: #31483a;
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.host-voice {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 0;
+  margin-top: 12px;
+
+  background: transparent;
+  border: none;
+
+  color: #987438;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ACTION BUTTON */
+
+.host-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: var(--host-green);
+  color: var(--host-champagne);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* QUESTIONS */
+
+.host-question-title {
+  margin: 20px 0 12px;
+
+  color: #082b1c;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.host-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.host-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  text-align: left;
+
+  padding: 12px 13px;
+
+  border-radius: 10px;
+  border: 1px solid #d4af6140;
+
+  background: #fffdf8;
+  color: #123e2b;
+
+  font-size: 12px;
+
+  transition: 0.25s ease;
+}
+
+.host-question:hover,
+.host-question.active {
+  background: #eee2c4;
+  border-color: #d4af61;
+}
+
+.host-question svg {
+  flex-shrink: 0;
+  color: #a08043;
+}
+
+/* FOOTER */
+
+.host-footer {
+  padding: 12px;
+
+  background: #f1eadb;
+
+  border-top: 1px solid #d4af6125;
+
+  text-align: center;
+  font-size: 9px;
+
+  color: #7a6c51;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .virtual-host {
+    left: 10px;
+    bottom: 8px;
+  }
+
+  .host-trigger {
+    width: 85px;
+    height: 115px;
+  }
+
+  .host-character {
+    width: 85px;
+  }
+
+  .host-bubble {
+    top: 0;
+    left: 65px;
+
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .host-panel {
+    bottom: 120px;
+    width: 330px;
+
+    max-width: calc(100vw - 25px);
+  }
+
+  .host-body {
+    max-height: min(350px, 43vh);
+    padding: 14px;
+  }
+
+  .host-identity h3 {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .host-character {
+    animation: none;
+  }
+}
